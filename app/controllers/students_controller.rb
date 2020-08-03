@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    Student.create(name: params[:student][:first_name], name: params[:student][:last_name], description: params[:post][:description])
-     redirect_to students_path
+    session[:form_params] = params.inspect
+    redirect_to new_student_path
   end
 end
